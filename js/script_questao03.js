@@ -7,12 +7,13 @@ formDados.addEventListener('submit', (evt) => {
     evt.preventDefault()
     const form_num = new FormData(formDados)
 
-    let largura = parseFloat(form_num.get('largura'))
-    let altura = parseFloat(form_num.get('altura'))
+    let distancia = parseFloat(form_num.get('distancia'))
+    let consumo = parseFloat(form_num.get('consumo'))
+    let preco = parseFloat (form_num.get('preco'))
     const rendimento = 2
 
-    let area = (parseFloat ( largura * altura ))
-    let quantidade = (parseFloat( area / rendimento ))
+    let combustivel = (parseFloat ( distancia / consumo ))
+    let valor = (parseFloat( combustivel * preco ))
     
-     divresultado.innerHTML = `area total é ${area.toFixed(2)} a quantidade total de tinta é ${quantidade.toFixed(2)}`
+     divresultado.innerHTML = `consumo total é ${area.toFixed(2)} valor total a pagar é ${quantidade.toFixed(2)}`
 })
